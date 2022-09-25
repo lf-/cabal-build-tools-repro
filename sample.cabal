@@ -1,0 +1,44 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.7.
+--
+-- see: https://github.com/sol/hpack
+
+name:           sample
+version:        0.0.0
+synopsis:       Sample Haskell project
+build-type:     Simple
+
+library
+  exposed-modules:
+      Main
+  other-modules:
+      Paths_sample
+  hs-source-dirs:
+      app
+  build-depends:
+      base >=4.9 && <5
+  default-language: Haskell2010
+
+executable hello
+  main-is: app/Main.hs
+  other-modules:
+      Paths_sample
+  build-depends:
+      base >=4.9 && <5
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: app/Main.hs
+  other-modules:
+      Main
+      Paths_sample
+  hs-source-dirs:
+      app
+  build-tool-depends:
+      hspec-discover:hspec-discover
+  build-depends:
+      base >=4.9 && <5
+    , hspec
+  default-language: Haskell2010
